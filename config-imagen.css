@@ -1,0 +1,29 @@
+/* ================= IMAGEN DE FONDO DE LA PORTADA ================= */
+.home-intro {
+  /* Para poner la imagen, cambia "none" por: url('https://TU_IMAGEN') */
+  --intro-img: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJ-l0x7CsdI_yoh0YbNxvOOVae6ZXm-38WUAC27ZzewwdoGCRo5IvMNpHoAx28dOr2E6EqUdYdgy3uBeoMt19CHIF8E2wITFkUhw594PGcI3K0zf9PzYTBGTVbakE26bg48QC92Rd-VbBWBD9M-UqqYn_MB9GDPIWaDdlPEnkASZg9ojLyN_0lvFZWAbBg/s1600/images.jpg');
+}
+
+.home-intro::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--intro-img) right center / cover no-repeat;
+  filter: brightness(0.6) saturate(0.9);
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 45%, #000 90%),
+    linear-gradient(to bottom, #000 calc(100% - var(--fade)), transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent 45%, #000 90%),
+    linear-gradient(to bottom, #000 calc(100% - var(--fade)), transparent 100%);
+  mask-composite: intersect;
+}
+
+.home-intro .intro-inner { position: relative; z-index: 1; }
+
+@media (max-width: 900px) {
+  .home-intro::before { opacity: 0.4; }
+}
