@@ -274,6 +274,11 @@
       border: 1px solid var(--border);
     }
 
+    .btn:not(.btn-light) {
+      color: #fff !important;
+      text-shadow: 0 1px 3px rgba(90, 60, 0, 0.5);
+    }
+
     .card {
       background: var(--bg);
       border: 1px solid var(--border);
@@ -333,10 +338,14 @@
       margin-top: 40px;
     }
     .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px 40px;
+      align-items: start;
       max-width: 1100px;
       margin: 0 auto;
       padding: 28px 20px;
-      text-align: center;
+      text-align: left;
     }
     .footer-attr {
       margin: 0 0 14px;
@@ -364,6 +373,58 @@
       font-size: 0.85rem;
       color: rgba(230, 230, 230, 0.9);
     }
+
+    /* El widget de Blogger trae text-align:center en línea, hay que anularlo */
+  .footer-attr .widget-content { text-align: left !important; }
+
+  /* Columna derecha */
+  .footer-right { text-align: right; }
+
+  .footer-links {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .footer-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 16px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    color: rgba(230, 230, 230, 0.95) !important;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none !important;
+    transition: background 0.2s ease;
+  }
+  .footer-links a:hover {
+    background: rgba(255, 255, 255, 0.22);
+    color: #fff !important;
+  }
+  .footer-links img {
+    width: 16px;
+    height: 16px;
+    border-radius: 0;
+  }
+
+  .footer-legal {
+    max-width: 460px;
+    margin: 0 0 0 auto;
+    font-size: 0.8rem;
+    line-height: 1.55;
+    color: rgba(230, 230, 230, 0.8);
+  }
+
+  @media (max-width: 768px) {
+    .footer-inner { grid-template-columns: 1fr; }
+    .footer-right { text-align: left; }
+    .footer-links { justify-content: flex-start; }
+    .footer-legal { margin-left: 0; }
+  }
 
     /* ================= MÓVIL ================= */
     @media (max-width: 768px) {
@@ -654,3 +715,17 @@
         color: var(--pop);
       }
     }
+/* ================= FUENTE DEL LOGO ================= */
+@font-face {
+  font-family: 'Bakso Sapi';
+  src: url('https://kokiridev.github.io/utilidades/BaksoSapi.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.logo span {
+  font-family: 'Bakso Sapi', 'Nunito', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
