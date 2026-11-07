@@ -56,3 +56,47 @@
   margin-top: 6px;
 }
 .post-body pre { background: #1b2f28; }
+
+/* ================= ROJO NAVIDEÑO (va al final de todo) ================= */
+:root {
+  --xmas-red: #c8372d;
+  --xmas-red-dark: #a82a21;
+}
+
+/* Botones en rojo con texto blanco (los "btn-light" no cambian) */
+.btn:not(.btn-light) {
+  background: var(--xmas-red);
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(200, 55, 45, 0.4);
+}
+.btn:not(.btn-light):hover {
+  background: var(--xmas-red-dark);
+  box-shadow: 0 8px 18px rgba(200, 55, 45, 0.5);
+}
+
+/* Navbar: el resaltado al pasar el mouse es una píldora roja con texto blanco */
+.nav a:hover,
+.nav .dropdown summary:hover,
+.nav .dropdown[open] summary {
+  background: var(--xmas-red);
+  color: #fff;
+}
+
+/* Elementos del desplegable "Proyectos" */
+.nav .dropdown-menu a:hover {
+  background: var(--bg);
+  color: var(--accent);
+}
+@media (max-width: 768px) {
+  .nav .dropdown-menu a:hover {
+    background: var(--xmas-red);
+    color: #fff;
+  }
+}
+
+/* Etiqueta "Entrada destacada" en rojo */
+.FeaturedPost > h2,
+.FeaturedPost > h3,
+.FeaturedPost > .title {
+  color: var(--accent);
+}
