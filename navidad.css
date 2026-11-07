@@ -100,3 +100,34 @@
 .FeaturedPost > .title {
   color: var(--accent);
 }
+
+/* ================= ARBOLITOS NAVIDEÑOS EN LAS TARJETAS ================= */
+.post-outer,
+.FeaturedPost {
+  position: relative;
+  isolation: isolate;
+}
+
+.post-outer::after,
+.FeaturedPost::after {
+  content: '';
+  position: absolute;
+  right: 18px;
+  bottom: 14px;
+  width: 170px;
+  height: 90px;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.12;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 190 100'%3E%3Cg fill='%231f4d3a'%3E%3Cpath transform='translate(110 0)' d='M0 0L14 30H7L21 56H11L28 84H4V100H-4V84H-28L-11 56H-21L-7 30H-14Z'/%3E%3Cpath transform='translate(60 25) scale(.75)' d='M0 0L14 30H7L21 56H11L28 84H4V100H-4V84H-28L-11 56H-21L-7 30H-14Z'/%3E%3Cpath transform='translate(160 45) scale(.55)' d='M0 0L14 30H7L21 56H11L28 84H4V100H-4V84H-28L-11 56H-21L-7 30H-14Z'/%3E%3Cpath transform='translate(24 55) scale(.45)' d='M0 0L14 30H7L21 56H11L28 84H4V100H-4V84H-28L-11 56H-21L-7 30H-14Z'/%3E%3C/g%3E%3C/svg%3E") right bottom / contain no-repeat;
+}
+
+@media (max-width: 768px) {
+  .post-outer::after,
+  .FeaturedPost::after {
+    right: 12px;
+    bottom: 10px;
+    width: 120px;
+    height: 64px;
+  }
+}
