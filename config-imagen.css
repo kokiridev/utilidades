@@ -1,7 +1,7 @@
 /* ================= IMAGEN DE FONDO DE LA PORTADA ================= */
 .home-intro {
   /* Para poner la imagen, cambia "none" por: url('https://TU_IMAGEN') */
-  --intro-img: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJ-l0x7CsdI_yoh0YbNxvOOVae6ZXm-38WUAC27ZzewwdoGCRo5IvMNpHoAx28dOr2E6EqUdYdgy3uBeoMt19CHIF8E2wITFkUhw594PGcI3K0zf9PzYTBGTVbakE26bg48QC92Rd-VbBWBD9M-UqqYn_MB9GDPIWaDdlPEnkASZg9ojLyN_0lvFZWAbBg/s1600/images.jpg');
+  --intro-img: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi0aJqRFS4gn2aXaQmK-4GoppQQPUSbR1Om4WjELMMdqmNOJcuBlq5X0wnbAhe5ajhUFTAvYxfFJEZAqOrU_zt6i6DJUYvN4_PGZd3FWbI8Hfwm4gVMXsIvAMJ7mY3rNFkDnnPJ5gig-9KOY_hm1y58ZEqOUExuCRih0OvXna3mMUUUgW3Shyphenhypheniuvosc9Ex2/s1600/pixel-art-christmas-landscape-at-night-with-red-house-christmas-tree-snowman-santa-claus-pine-trees-and-snow-8-bit-game-background-vector.jpg');
 }
 
 .home-intro::before {

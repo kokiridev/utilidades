@@ -411,23 +411,31 @@ body:not(.page-index) .FeaturedPost {
 }
 
 /* ================= FOOTER ================= */
+/* Estructura (ver HTML):
+   .site-footer
+     .footer-inner
+       .footer-attr    -> "Con tecnología de Blogger", centrado
+       .footer-main    -> dos columnas: .footer-left | .footer-right
+     .footer-bottom    -> línea de esquina a esquina + "© año título"
+*/
 .site-footer {
   background: var(--brand);
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* línea contenido / footer */
   box-shadow: 0 -6px 22px rgba(35, 60, 100, 0.18);
   margin-top: 40px;
 }
 .footer-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px 40px;
-  align-items: start;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 28px 20px;
-  text-align: left;
+  padding: 28px 20px 40px; /* arriba | lados | abajo */
+  text-align: center;
+}
+
+/* Arriba: "Con tecnología de Blogger" */
+.footer-inner > .footer-attr {
+  margin: 0 0 16px;
 }
 .footer-attr {
-  margin: 0 0 14px;
   color: rgba(230, 230, 230, 0.9);
 }
 .footer-attr .widget {
@@ -450,17 +458,20 @@ body:not(.page-index) .FeaturedPost {
   color: #fff !important;
   text-decoration: underline;
 }
+
+/* Medio: texto de fans a la izquierda, enlaces y aviso legal a la derecha */
+.footer-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 40px;
+  align-items: start;
+  text-align: left;
+}
 .footer-copy {
   font-size: 0.85rem;
   color: rgba(230, 230, 230, 0.9);
 }
 
-/* El widget de Blogger trae text-align:center en línea, hay que anularlo */
-.footer-attr .widget-content {
-  text-align: left !important;
-}
-
-/* Columna derecha */
 .footer-right {
   text-align: right;
 }
@@ -504,8 +515,17 @@ body:not(.page-index) .FeaturedPost {
   color: rgba(230, 230, 230, 0.8);
 }
 
+/* Abajo: línea divisora de esquina a esquina + barra inferior */
+.footer-bottom {
+  padding: 14px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(230, 230, 230, 0.85);
+}
+
 @media (max-width: 768px) {
-  .footer-inner {
+  .footer-main {
     grid-template-columns: 1fr;
   }
   .footer-right {
@@ -875,6 +895,7 @@ body:not(.page-index) .section-divider {
     color: var(--pop);
   }
 }
+
 /* ================= FUENTE DEL LOGO ================= */
 @font-face {
   font-family: "Bakso Sapi";
