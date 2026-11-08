@@ -477,11 +477,11 @@
 
     /* ================= INTRODUCCIÓN (PORTADA) ================= */
     .home-intro {
-      --fade: 280px;
+      --fade: 200px;
       position: relative;
       z-index: 1;
       width: 100%;
-      padding: 44px 20px 100px;
+      padding: 44px 20px var(--fade);
       color: #fff;
       background:
         linear-gradient(to top, var(--bg), transparent var(--fade)),
@@ -596,7 +596,7 @@
     }
 
     @media (max-width: 900px) {
-      .home-intro { --fade: 185px; padding: 30px 16px 80px; }
+      .home-intro { --fade: 140px; padding: 30px 16px var(--fade); }
       .intro-inner { grid-template-columns: 1fr; }
       .home-intro h1 { font-size: 1.7rem; }
       .section-divider { margin-top: -20px; }
