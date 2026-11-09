@@ -1,0 +1,168 @@
+/* ================= TEMA HALLOWEEN (va al final) ================= */
+:root {
+  --brand: #2d1b3d;           /* púrpura profundo (header/footer) */
+  --brand-dark: #1a0f26;
+  --accent: #d84315;          /* naranja calabaza */
+  --accent-dark: #bf360c;
+  --pop: #ffa726;
+  --pop-dark: #f57c00;
+  --pop-soft: #ffe0b2;
+  --pop-text: #4a2c00;
+  --bg: #f2e9dc;              /* crema envejecida */
+  --border: #d4c4b0;
+  --text: #2a1a1a;
+  --muted: #6b5a5a;
+  --shadow: 0 6px 22px rgba(45, 27, 61, 0.18);
+  --shadow-hover: 0 10px 28px rgba(45, 27, 61, 0.28);
+}
+
+/* Franja de la portada en púrpura */
+.home-intro {
+  background:
+    linear-gradient(to top, var(--bg), transparent var(--fade)),
+    linear-gradient(135deg, #3d2456 0%, var(--brand) 55%, var(--brand-dark) 100%);
+}
+
+/* Luces de colores colgando del header (naranja / púrpura / verde / ámbar) */
+.site-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 16px;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 10px 9px, #ff6b1a 4px, transparent 5px) 0 0 / 80px 16px repeat-x,
+    radial-gradient(circle at 30px 9px, #9c27b0 4px, transparent 5px) 0 0 / 80px 16px repeat-x,
+    radial-gradient(circle at 50px 9px, #8bc34a 4px, transparent 5px) 0 0 / 80px 16px repeat-x,
+    radial-gradient(circle at 70px 9px, #ffc107 4px, transparent 5px) 0 0 / 80px 16px repeat-x,
+    linear-gradient(#1a0f26, #1a0f26) 0 0 / 100% 2px no-repeat;
+}
+
+/* Detalles en naranja + emojis */
+.section-divider::before { background: linear-gradient(to right, transparent, rgba(45, 27, 61, 0.45)); }
+.section-divider::after  { background: linear-gradient(to left,  transparent, rgba(45, 27, 61, 0.45)); }
+.section-divider span {
+  background: #d84315;
+  box-shadow: 0 0 0 4px rgba(216, 67, 21, 0.25);
+}
+.intro-tag::before { content: '🎃 '; }
+.intro-tag::after  { content: ' 🦇'; }
+.footer-bottom::after {
+  content: '🎃 ¡Feliz Halloween! 🦇';
+  display: block;
+  margin-top: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--pop);
+}
+.post-body pre { background: #1a0f26; }
+
+/* ================= NARANJA HALLOWEEN ================= */
+:root {
+  --xmas-orange: #d84315;
+  --xmas-orange-dark: #bf360c;
+}
+
+/* Botones en naranja con texto blanco (los "btn-light" no cambian) */
+.btn:not(.btn-light) {
+  background: var(--xmas-orange);
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(216, 67, 21, 0.4);
+}
+.btn:not(.btn-light):hover {
+  background: var(--xmas-orange-dark);
+  box-shadow: 0 8px 18px rgba(216, 67, 21, 0.5);
+}
+
+/* Navbar: resaltado al pasar el mouse en naranja */
+.nav a:hover,
+.nav .dropdown summary:hover,
+.nav .dropdown[open] summary {
+  background: var(--xmas-orange);
+  color: #fff;
+}
+
+/* Desplegable "Proyectos" */
+.nav .dropdown-menu a:hover {
+  background: var(--bg);
+  color: var(--accent);
+}
+@media (max-width: 768px) {
+  .nav .dropdown-menu a:hover {
+    background: var(--xmas-orange);
+    color: #fff;
+  }
+}
+
+/* Etiqueta "Entrada destacada" en naranja */
+.FeaturedPost > h2,
+.FeaturedPost > h3,
+.FeaturedPost > .title {
+  color: var(--accent);
+}
+
+/* ================= MURCIÉLAGOS EN LAS TARJETAS ================= */
+.post-outer,
+.FeaturedPost {
+  position: relative;
+  isolation: isolate;
+}
+
+.post-outer::after,
+.FeaturedPost::after {
+  content: '';
+  position: absolute;
+  right: 18px;
+  bottom: 14px;
+  width: 170px;
+  height: 90px;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.12;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 190 100'%3E%3Cg fill='%232d1b3d'%3E%3Cpath transform='translate(105 15) scale(0.9)' d='M0,0 C-4,-4 -14,-6 -22,-3 C-18,-1 -20,4 -24,6 C-20,8 -18,12 -22,16 C-14,14 -8,16 -4,14 C-2,16 2,16 4,14 C8,16 14,14 22,16 C18,12 20,8 24,6 C20,4 18,-1 22,-3 C14,-6 4,-4 0,0 Z'/%3E%3Cpath transform='translate(55 45) scale(0.65)' d='M0,0 C-4,-4 -14,-6 -22,-3 C-18,-1 -20,4 -24,6 C-20,8 -18,12 -22,16 C-14,14 -8,16 -4,14 C-2,16 2,16 4,14 C8,16 14,14 22,16 C18,12 20,8 24,6 C20,4 18,-1 22,-3 C14,-6 4,-4 0,0 Z'/%3E%3Cpath transform='translate(160 55) scale(0.5)' d='M0,0 C-4,-4 -14,-6 -22,-3 C-18,-1 -20,4 -24,6 C-20,8 -18,12 -22,16 C-14,14 -8,16 -4,14 C-2,16 2,16 4,14 C8,16 14,14 22,16 C18,12 20,8 24,6 C20,4 18,-1 22,-3 C14,-6 4,-4 0,0 Z'/%3E%3Cpath transform='translate(25 55) scale(0.4)' d='M0,0 C-4,-4 -14,-6 -22,-3 C-18,-1 -20,4 -24,6 C-20,8 -18,12 -22,16 C-14,14 -8,16 -4,14 C-2,16 2,16 4,14 C8,16 14,14 22,16 C18,12 20,8 24,6 C20,4 18,-1 22,-3 C14,-6 4,-4 0,0 Z'/%3E%3C/g%3E%3C/svg%3E") right bottom / contain no-repeat;
+}
+
+@media (max-width: 768px) {
+  .post-outer::after,
+  .FeaturedPost::after {
+    right: 12px;
+    bottom: 10px;
+    width: 120px;
+    height: 64px;
+  }
+}
+
+/* ================= HALLOWEEN EN TEMA OSCURO ================= */
+html[data-theme="dark"] {
+  --brand: #1a0f26;
+  --brand-dark: #0a0512;
+  --accent: #ff8a65;
+  --accent-dark: #ffab91;
+  --bg: #0d0818;
+  --card: #1a1029;
+  --border: #2d1b3d;
+  --text: #e8dfee;
+  --muted: #a596b5;
+  --pop: #ffb74d;
+  --pop-dark: #ffa726;
+}
+html[data-theme="dark"] .section-divider::before {
+  background: linear-gradient(to right, transparent, rgba(255, 138, 101, 0.35));
+}
+html[data-theme="dark"] .section-divider::after {
+  background: linear-gradient(to left, transparent, rgba(255, 138, 101, 0.35));
+}
+/* Los murciélagos se aclaran para verse sobre fondo oscuro */
+html[data-theme="dark"] .post-outer::after,
+html[data-theme="dark"] .FeaturedPost::after {
+  filter: brightness(4) saturate(1.6);
+}
+/* Banner en tema oscuro */
+html[data-theme="dark"] .home-intro {
+  background:
+    linear-gradient(to top, var(--bg), transparent var(--fade)),
+    linear-gradient(135deg, #2a1545 0%, var(--brand) 55%, var(--brand-dark) 100%);
+}
