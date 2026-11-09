@@ -156,3 +156,9 @@ html[data-theme="dark"] .post-outer::after,
 html[data-theme="dark"] .FeaturedPost::after {
   filter: brightness(3);
 }
+/* Banner navideño en tema oscuro */
+html[data-theme="dark"] .home-intro {
+  background:
+    linear-gradient(to top, var(--bg), transparent var(--fade)),
+    linear-gradient(135deg, #1d4a37 0%, var(--brand) 55%, var(--brand-dark) 100%);
+}

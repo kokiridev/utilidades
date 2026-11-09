@@ -1025,3 +1025,9 @@ html[data-theme="dark"] .section-divider::before {
 html[data-theme="dark"] .section-divider::after {
   background: linear-gradient(to left, transparent, rgba(127, 176, 230, 0.35));
 }
+/* Banner de la portada en tema oscuro */
+html[data-theme="dark"] .home-intro {
+  background:
+    linear-gradient(to top, var(--bg), transparent var(--fade)),
+    linear-gradient(135deg, #243f5f 0%, var(--brand) 55%, var(--brand-dark) 100%);
+}
