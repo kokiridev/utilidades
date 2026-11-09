@@ -131,3 +131,28 @@
     height: 64px;
   }
 }
+
+
+
+
+/* ================= NAVIDAD EN TEMA OSCURO ================= */
+html[data-theme="dark"] {
+  --brand: #14372a;
+  --brand-dark: #0e281e;
+  --accent: #ff8a80;
+  --accent-dark: #ffb4ad;
+  --bg: #0e1713;
+  --card: #16231d;
+  --border: #25382f;
+}
+html[data-theme="dark"] .section-divider::before {
+  background: linear-gradient(to right, transparent, rgba(120, 200, 160, 0.35));
+}
+html[data-theme="dark"] .section-divider::after {
+  background: linear-gradient(to left, transparent, rgba(120, 200, 160, 0.35));
+}
+/* Los arbolitos de las tarjetas se aclaran para que se vean sobre fondo oscuro */
+html[data-theme="dark"] .post-outer::after,
+html[data-theme="dark"] .FeaturedPost::after {
+  filter: brightness(3);
+}
