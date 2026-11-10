@@ -173,3 +173,42 @@ html[data-theme="dark"] .home-intro {
     linear-gradient(to top, var(--bg), transparent var(--fade)),
     linear-gradient(135deg, #2a1545 0%, var(--brand) 55%, var(--brand-dark) 100%);
 }
+
+/* ================= FONDO DE LA PORTADA (HALLOWEEN) ================= */
+.home-intro {
+  /* Cambia "none" por url('https://TU_IMAGEN') si quieres una foto */
+  --intro-img: none;
+}
+
+.home-intro::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    /* Luna llena */
+    radial-gradient(circle at 82% 28%, #fffbe0 0, #fff59d 2%, #ffd54f 5%, transparent 9%),
+    /* Halo lunar */
+    radial-gradient(circle at 82% 28%, rgba(255, 213, 79, 0.25) 0, transparent 22%),
+    /* Niebla púrpura */
+    radial-gradient(ellipse at 25% 100%, rgba(80, 40, 120, 0.55) 0, transparent 60%),
+    radial-gradient(ellipse at 80% 100%, rgba(140, 40, 80, 0.4) 0, transparent 55%),
+    /* Imagen opcional */
+    var(--intro-img, none) right center / cover no-repeat;
+  filter: brightness(0.92) saturate(1.1);
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 40%, #000 85%),
+    linear-gradient(to bottom, #000 calc(100% - var(--fade)), transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent 40%, #000 85%),
+    linear-gradient(to bottom, #000 calc(100% - var(--fade)), transparent 100%);
+  mask-composite: intersect;
+}
+
+.home-intro .intro-inner { position: relative; z-index: 1; }
+
+@media (max-width: 900px) {
+  .home-intro::before { opacity: 0.6; }
+}
